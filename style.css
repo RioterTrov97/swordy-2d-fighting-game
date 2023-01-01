@@ -14,6 +14,7 @@
 body {
 	margin: 0;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	place-items: center;
 	min-width: 100vw;
@@ -28,6 +29,7 @@ body {
 .main-container {
 	position: relative;
 	display: inline-block;
+	margin-top: 100px;
 }
 
 .status-container {
@@ -234,4 +236,14 @@ body {
 	right: 0;
 	font-size: 50px;
 	font-weight: bold;
+}
+
+.controls-container {
+	display: flex;
+	width: 1024px;
+	justify-content: space-between;
+}
+
+.player-controls {
+	font-size: 14px;
 }

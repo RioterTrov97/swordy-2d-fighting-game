@@ -21,7 +21,7 @@ let background = getDefaultBackgroundInstance();
 let shop = getDefaultShopInstance();
 let player = getDefaultPlayerInstance();
 let enemy = getDefaultEnemyInstance();
-
+let hasGameStarted = false;
 let keys = {
 	a: {
 		pressed: false,
@@ -142,12 +142,11 @@ function animate() {
 	// end game based on health
 	if (enemy.health <= 0 || player.health <= 0 || timer <= 0) {
 		determineWinner({ player, enemy, timerId });
+		hasGameStarted = false;
 	}
 }
 
 animate();
-
-let hasGameStarted = false;
 
 window.addEventListener('keydown', ({ key }) => {
 	if (!timer || !hasGameStarted) return;
@@ -235,6 +234,7 @@ resetButton.addEventListener('click', () => {
 	document.querySelector('.reset').style.display = 'none';
 
 	timer = DEFAULT_TIMER;
+	hasGameStarted = true;
 	decreaseTimer();
 });
 
