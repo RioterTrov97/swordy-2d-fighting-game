@@ -23,6 +23,6 @@ export function determineWinner({ player, enemy, timerId }) {
 	} else {
 		document.querySelector('.result').innerHTML = 'Player 2 Wins 🎉🎉🎉';
 	}
-	document.querySelector('.result').style.display = 'flex';
+	document.querySelector('.result-container').style.display = 'flex';
 	document.querySelector('.reset').style.display = 'flex';
 }

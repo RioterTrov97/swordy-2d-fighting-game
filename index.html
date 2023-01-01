@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Let's fight</title>
+		<title>Swordy</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -14,11 +14,16 @@
 	</head>
 	<body>
 		<div class="main-container">
+			<p class="title">⚔️Swordy⚔️</p>
 			<div class="status-container">
 				<!-- Player Health -->
 				<div class="player-health-container">
 					<div class="player-health-bg"></div>
 					<div id="playerHealth"></div>
+					<div class="player-health-percentage-container">
+						<p class="player-heart-emoji">❤️</p>
+						<p class="player-health-percentage">100%</p>
+					</div>
 				</div>
 
 				<!-- Timer -->
@@ -28,16 +33,27 @@
 				<div class="enemy-health-container">
 					<div class="enemy-health-bg"></div>
 					<div id="enemyHealth"></div>
+					<div class="enemy-health-percentage-container">
+						<p class="enemy-heart-emoji">❤️</p>
+						<p class="enemy-health-percentage">100%</p>
+					</div>
 				</div>
 			</div>
-			<div class="result"></div>
+
+			<!-- End of game renders -->
+			<div class="result-container">
+				<p class="result"></p>
+			</div>
 			<div class="reset">
-				<button class="reset-btn">Reset</button>
+				<button class="reset-btn">Play Again</button>
 			</div>
+
+			<!-- Start of game renders -->
 			<div class="start">
-				<p>⚔️Swordy⚔️</p>
-				<button class="start-btn">Start</button>
+				<button class="start-btn">Start Game</button>
 			</div>
+
+			<!-- Canvas to draw the game -->
 			<canvas></canvas>
 		</div>
 		<script

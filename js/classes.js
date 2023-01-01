@@ -1,4 +1,4 @@
-const gravity = 0.7;
+import { HEALTH_DECREASE_ON_HIT, GRAVITY } from './constants';
 const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
 
@@ -129,7 +129,7 @@ class Fighter extends Sprite {
 			this.velocity.y = 0;
 			this.position.y = 330;
 		} else {
-			this.velocity.y += gravity;
+			this.velocity.y += GRAVITY;
 		}
 	}
 
@@ -139,7 +139,7 @@ class Fighter extends Sprite {
 	}
 
 	takeHit() {
-		this.health -= 10;
+		this.health -= HEALTH_DECREASE_ON_HIT;
 		this.switchSprite(this.health <= 0 ? 'death' : 'takeHit');
 	}
 

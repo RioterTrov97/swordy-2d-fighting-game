@@ -1,5 +1,4 @@
 import './style.css';
-import { Fighter, Sprite } from './js/classes';
 import {
 	getDefaultBackgroundInstance,
 	getDefaultShopInstance,
@@ -7,9 +6,7 @@ import {
 	getDefaultEnemyInstance,
 } from './js/instances';
 import { rectangularCollision, determineWinner } from './js/utils';
-
-//constants
-const DEFAULT_TIMER = 60;
+import { DEFAULT_TIMER } from './js/constants';
 
 const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
@@ -115,6 +112,8 @@ function animate() {
 		gsap.to('#enemyHealth', {
 			width: enemy.health + '%',
 		});
+		document.querySelector('.enemy-health-percentage').innerHTML =
+			enemy.health + '%';
 	}
 
 	// if player misses
@@ -132,6 +131,8 @@ function animate() {
 		gsap.to('#playerHealth', {
 			width: player.health + '%',
 		});
+		document.querySelector('.player-health-percentage').innerHTML =
+			player.health + '%';
 	}
 
 	// if enemy misses
@@ -140,7 +141,7 @@ function animate() {
 	}
 
 	// end game based on health
-	if (enemy.health <= 0 || player.health <= 0) {
+	if (enemy.health <= 0 || player.health <= 0 || timer <= 0) {
 		determineWinner({ player, enemy, timerId });
 	}
 }
@@ -163,7 +164,7 @@ window.addEventListener('keydown', ({ key }) => {
 				player.lastKey = 'd';
 				break;
 			case 'w':
-				if (player.velocity.y === 0) player.velocity.y = -20;
+				if (player.velocity.y === 0) player.velocity.y = -16;
 				break;
 			case 's':
 				player.attack();
@@ -183,7 +184,7 @@ window.addEventListener('keydown', ({ key }) => {
 				enemy.lastKey = 'ArrowLeft';
 				break;
 			case 'ArrowUp':
-				if (enemy.velocity.y === 0) enemy.velocity.y = -20;
+				if (enemy.velocity.y === 0) enemy.velocity.y = -16;
 				break;
 			case 'ArrowDown':
 				enemy.attack();
@@ -228,7 +229,7 @@ resetButton.addEventListener('click', () => {
 		width: enemy.health + '%',
 	});
 
-	document.querySelector('.result').style.display = 'none';
+	document.querySelector('.result-container').style.display = 'none';
 	document.querySelector('.reset').style.display = 'none';
 
 	timer = DEFAULT_TIMER;
