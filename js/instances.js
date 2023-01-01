@@ -1,15 +1,37 @@
 import { Fighter, Sprite } from './classes';
 
+// shop and background images
+import backgroundImageUrl from '../img/background.png';
+import shopImageUrl from '../img/shop.png';
+
+// player sprites
+import playerIdleImageUrl from '../img/samuraiMack/Idle.png';
+import playerRunImageUrl from '../img/samuraiMack/Run.png';
+import playerJumpImageUrl from '../img/samuraiMack/Jump.png';
+import playerFallImageUrl from '../img/samuraiMack/Fall.png';
+import playerAttack1ImageUrl from '../img/samuraiMack/Attack1.png';
+import playerTakeHitImageUrl from '../img/samuraiMack/Take Hit - white silhouette.png';
+import playerDeathImageUrl from '../img/samuraiMack/Death.png';
+
+// enemy sprites
+import enemyIdleImageUrl from '../img/kenji/Idle.png';
+import enemyRunImageUrl from '../img/kenji/Run.png';
+import enemyJumpImageUrl from '../img/kenji/Jump.png';
+import enemyFallImageUrl from '../img/kenji/Fall.png';
+import enemyAttack1ImageUrl from '../img/kenji/Attack1.png';
+import enemyTakeHitImageUrl from '../img/kenji/Take Hit.png';
+import enemyDeathImageUrl from '../img/kenji/Death.png';
+
 export const getDefaultBackgroundInstance = () =>
 	new Sprite({
 		position: { x: 0, y: 0 },
-		imageSrc: './img/background.png',
+		imageSrc: backgroundImageUrl,
 	});
 
 export const getDefaultShopInstance = () =>
 	new Sprite({
 		position: { x: 670, y: 128 },
-		imageSrc: './img/shop.png',
+		imageSrc: shopImageUrl,
 		scale: 2.75,
 		framesMax: 6,
 	});
@@ -18,7 +40,7 @@ export const getDefaultPlayerInstance = () =>
 	new Fighter({
 		position: { x: 0, y: 0 },
 		velocity: { x: 0, y: 1 },
-		imageSrc: './img/samuraiMack/Idle.png',
+		imageSrc: playerIdleImageUrl,
 		framesMax: 8,
 		scale: 2.5,
 		offset: {
@@ -27,31 +49,31 @@ export const getDefaultPlayerInstance = () =>
 		},
 		sprites: {
 			idle: {
-				imageSrc: './img/samuraiMack/Idle.png',
+				imageSrc: playerIdleImageUrl,
 				framesMax: 8,
 			},
 			run: {
-				imageSrc: './img/samuraiMack/Run.png',
+				imageSrc: playerRunImageUrl,
 				framesMax: 8,
 			},
 			jump: {
-				imageSrc: './img/samuraiMack/Jump.png',
+				imageSrc: playerJumpImageUrl,
 				framesMax: 2,
 			},
 			fall: {
-				imageSrc: './img/samuraiMack/Fall.png',
+				imageSrc: playerFallImageUrl,
 				framesMax: 2,
 			},
 			attack1: {
-				imageSrc: './img/samuraiMack/Attack1.png',
+				imageSrc: playerAttack1ImageUrl,
 				framesMax: 6,
 			},
 			takeHit: {
-				imageSrc: './img/samuraiMack/Take Hit - white silhouette.png',
+				imageSrc: playerTakeHitImageUrl,
 				framesMax: 4,
 			},
 			death: {
-				imageSrc: './img/samuraiMack/Death.png',
+				imageSrc: playerDeathImageUrl,
 				framesMax: 6,
 			},
 		},
@@ -68,7 +90,7 @@ export const getDefaultEnemyInstance = () =>
 		velocity: { x: 0, y: 0 },
 		offset: { x: -50, y: 0 },
 		color: 'blue',
-		imageSrc: './img/kenji/Idle.png',
+		imageSrc: enemyIdleImageUrl,
 		framesMax: 4,
 		scale: 2.5,
 		offset: {
@@ -77,31 +99,31 @@ export const getDefaultEnemyInstance = () =>
 		},
 		sprites: {
 			idle: {
-				imageSrc: './img/kenji/Idle.png',
+				imageSrc: enemyIdleImageUrl,
 				framesMax: 4,
 			},
 			run: {
-				imageSrc: './img/kenji/Run.png',
+				imageSrc: enemyRunImageUrl,
 				framesMax: 8,
 			},
 			jump: {
-				imageSrc: './img/kenji/Jump.png',
+				imageSrc: enemyJumpImageUrl,
 				framesMax: 2,
 			},
 			fall: {
-				imageSrc: './img/kenji/Fall.png',
+				imageSrc: enemyFallImageUrl,
 				framesMax: 2,
 			},
 			attack1: {
-				imageSrc: './img/kenji/Attack1.png',
+				imageSrc: enemyAttack1ImageUrl,
 				framesMax: 4,
 			},
 			takeHit: {
-				imageSrc: './img/kenji/Take hit.png',
+				imageSrc: enemyTakeHitImageUrl,
 				framesMax: 3,
 			},
 			death: {
-				imageSrc: './img/kenji/Death.png',
+				imageSrc: enemyDeathImageUrl,
 				framesMax: 6,
 			},
 		},

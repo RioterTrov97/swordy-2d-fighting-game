@@ -22,7 +22,7 @@ let shop = getDefaultShopInstance();
 let player = getDefaultPlayerInstance();
 let enemy = getDefaultEnemyInstance();
 
-const keys = {
+let keys = {
 	a: {
 		pressed: false,
 	},
@@ -112,7 +112,7 @@ function animate() {
 			width: enemy.health + '%',
 		});
 		document.querySelector('.enemy-health-percentage').innerHTML =
-			(enemy.health < 0 ? 0 : enemy.health) + '%';
+			enemy.health + '%';
 	}
 
 	// if player misses
@@ -131,7 +131,7 @@ function animate() {
 			width: player.health + '%',
 		});
 		document.querySelector('.player-health-percentage').innerHTML =
-			(player.health < 0 ? 0 : player.health) + '%';
+			player.health + '%';
 	}
 
 	// if enemy misses
@@ -227,6 +227,9 @@ resetButton.addEventListener('click', () => {
 	gsap.to('#enemyHealth', {
 		width: enemy.health + '%',
 	});
+
+	document.querySelector('.player-health-percentage').innerHTML = '100%';
+	document.querySelector('.enemy-health-percentage').innerHTML = '100%';
 
 	document.querySelector('.result-container').style.display = 'none';
 	document.querySelector('.reset').style.display = 'none';

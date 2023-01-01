@@ -20,13 +20,6 @@ body {
 	min-height: 100vh;
 }
 
-@media (prefers-color-scheme: light) {
-	:root {
-		color: #213547;
-		background-color: #ffffff;
-	}
-}
-
 * {
 	box-sizing: border-box;
 	font-family: 'Press Start 2P', cursive;
