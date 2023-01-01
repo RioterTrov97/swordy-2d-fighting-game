@@ -108,12 +108,11 @@ function animate() {
 	) {
 		enemy.takeHit();
 		player.isAttacking = false;
-		// document.querySelector('#enemyHealth').style.width = enemy.health + '%';
 		gsap.to('#enemyHealth', {
 			width: enemy.health + '%',
 		});
 		document.querySelector('.enemy-health-percentage').innerHTML =
-			enemy.health + '%';
+			(enemy.health < 0 ? 0 : enemy.health) + '%';
 	}
 
 	// if player misses
@@ -132,7 +131,7 @@ function animate() {
 			width: player.health + '%',
 		});
 		document.querySelector('.player-health-percentage').innerHTML =
-			player.health + '%';
+			(player.health < 0 ? 0 : player.health) + '%';
 	}
 
 	// if enemy misses

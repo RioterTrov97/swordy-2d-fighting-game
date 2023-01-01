@@ -52,6 +52,9 @@ body {
 	width: 100%;
 	display: flex;
 	justify-content: flex-end;
+	border-top-left-radius: 50px;
+	border-bottom-left-radius: 50px;
+	overflow: hidden;
 }
 
 .player-health-bg {
@@ -71,18 +74,12 @@ body {
 	right: 0;
 }
 
-.player-health-bg,
-#playerHealth {
-	border-top-left-radius: 50px;
-	border-bottom-left-radius: 50px;
-}
-
 .player-health-percentage-container {
 	position: absolute;
 	display: flex;
 	align-items: center;
-	top: -24px;
-	left: 10px;
+	top: 5px;
+	left: 30px;
 }
 
 .player-heart-emoji {
@@ -115,6 +112,9 @@ body {
 	position: relative;
 	height: 40px;
 	width: 100%;
+	border-top-right-radius: 50px;
+	border-bottom-right-radius: 50px;
+	overflow: hidden;
 }
 
 .enemy-health-bg {
@@ -133,18 +133,12 @@ body {
 	right: 0;
 }
 
-.enemy-health-bg,
-#enemyHealth {
-	border-top-right-radius: 50px;
-	border-bottom-right-radius: 50px;
-}
-
 .enemy-health-percentage-container {
 	position: absolute;
 	display: flex;
 	align-items: center;
-	top: -24px;
-	right: 10px;
+	top: 5px;
+	right: 30px;
 }
 
 .enemy-heart-emoji {
@@ -179,6 +173,7 @@ body {
 	background: rgba(0, 0, 0, 0.5);
 	padding: 20px;
 	border-radius: 10px;
+	margin-bottom: 150px;
 }
 
 .reset {
@@ -199,7 +194,7 @@ body {
 	border-radius: 5px;
 	border: none;
 	outline: none;
-	margin-top: 200px;
+	margin-top: 130px;
 	cursor: pointer;
 	background: rgb(200, 0, 0);
 	font-size: 18px;
